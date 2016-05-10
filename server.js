@@ -26,30 +26,30 @@ controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, messa
     bot.reply(message, 'Hello!')
     bot.reply(message, {
         attachment: {
-            type: 'template',
-            payload: {
-                template_type: 'button',
-                text: 'What do you like to order, human?',
-                buttons: [
+            'type': 'template',
+            'payload': {
+                'template_type': 'button',
+                'text': 'What do you like to order, human?',
+                'buttons': [
                     {
-                        type: 'postback',
-                        title: 'Appetisers',
-                        payload: 'appetisers'
+                        'type': 'postback',
+                        'title': 'Appetisers',
+                        'payload': 'appetisers'
                     },
                     {
-                        type: 'postback',
-                        title: 'Salads',
-                        payload: 'salads'
+                        'type': 'postback',
+                        'title': 'Salads',
+                        'payload': 'salads'
                     },
                     {
-                        type: 'postback',
-                        title: 'Main Course',
-                        payload: 'mainCourse'
+                        'type': 'postback',
+                        'title': 'Main Course',
+                        'payload': 'mainCourse'
                     },
                     {
-                        type: 'postback',
-                        title: 'Desserts',
-                        payload: 'desserts'
+                        'type': 'postback',
+                        'title': 'Desserts',
+                        'payload': 'desserts'
                     }
                 ]
             }
