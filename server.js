@@ -17,9 +17,9 @@ var bot = controller.spawn()
 
 controller.setupWebserver(port, function (err, webserver) {
     if (err) return console.log(err)
-    controller.createWebhookEndpoints(webserver, function (webserver, bot, function () {
+    controller.createWebhookEndpoints(webserver, bot, function() {
         console.log('Ready.')
-    }))
+    })
 })
 
 controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, message) {
