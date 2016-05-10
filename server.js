@@ -24,12 +24,13 @@ controller.setupWebserver(port, function (err, webserver) {
 
 controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, message) {
     bot.reply(message, 'Hello!')
+    bot.reply(message, 'I\'m about to show you something.')
     bot.reply(message, {
         attachment: {
             'type': 'template',
             'payload': {
                 'template_type': 'button',
-                'text': 'What do you like to order, human?',
+                'text': 'What do you like to eat, human?',
                 'buttons': [
                     {
                         'type': 'postback',
@@ -48,8 +49,8 @@ controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, messa
                     },
                     {
                         'type': 'postback',
-                        'title': 'Desserts',
-                        'payload': 'desserts'
+                        'title': 'Dessert',
+                        'payload': 'dessert'
                     }
                 ]
             }
