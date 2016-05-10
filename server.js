@@ -24,37 +24,64 @@ controller.setupWebserver(port, function (err, webserver) {
 
 controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, message) {
     bot.reply(message, 'Hello!')
-    bot.reply(message, 'I\'m about to show you something.')
+    bot.reply(message, 'What are you in the mood for today?')
     bot.reply(message, {
         attachment: {
             'type': 'template',
             'payload': {
-                'template_type': 'button',
-                'text': 'What do you like to eat, human?',
-                'buttons': [
+                'template_type': 'generic',
+                'elements': [
                     {
-                        'type': 'postback',
                         'title': 'Appetisers',
-                        'payload': 'appetisers'
+                        'image_url': 'http://www.libbytreasuremountain.com/wp-content/uploads/2014/03/appetizer.jpg',
+                        'subtitle': 'The best Appetisers in town.',
+                        'buttons': [
+                            {
+                                'type': 'postback',
+                                'title': 'Appetisers',
+                                'payload': 'appetisers'
+                            }
+                        ]
                     },
                     {
-                        'type': 'postback',
                         'title': 'Salads',
-                        'payload': 'salads'
+                        'image_url': 'http://1.bp.blogspot.com/-wygAvzlH4oc/UdBCAdBs4FI/AAAAAAAAByA/oWa40mzFrJo/s400/ramen+angle.jpg',
+                        'subtitle': 'The best salads in town.',
+                        'buttons': [
+                            {
+                                'type': 'postback',
+                                'title': 'Salads',
+                                'payload': 'salads'
+                            }
+                        ]
                     },
                     {
-                        'type': 'postback',
                         'title': 'Main Course',
-                        'payload': 'mainCourse'
+                        'image_url': 'http://www.cakeslash.com/wp-content/uploads/2014/08/tenderloin-main-course-food-picture.jpg',
+                        'subtitle': 'The best food in town.',
+                        'buttons': [
+                            {
+                                'type': 'postback',
+                                'title': 'Main Course',
+                                'payload': 'mainCourse'
+                            }
+                        ]
                     },
                     {
-                        'type': 'postback',
-                        'title': 'Dessert',
-                        'payload': 'dessert'
+                        'title': 'Desserts',
+                        'image_url': 'http://www.amthewinersclub.com/Resources/dessert.jpg',
+                        'subtitle': 'The best desserts in town.',
+                        'buttons': [
+                            {
+                                'type': 'postback',
+                                'title': 'Desserts',
+                                'payload': 'desserts'
+                            }
+                        ]
                     }
                 ]
-            }
         }
+    }
     })
 })
 
