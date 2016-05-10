@@ -8,7 +8,7 @@ if (!accessToken) throw new Error('FACEBOOK_PAGE_ACCESS_TOKEN is required but mi
 if (!verifyToken) throw new Error('FACEBOOK_VERIFY_TOKEN is required but missing')
 if (!port) throw new Error('PORT is required but missing')
 
-var controller = Botkit.facebookBot({
+var controller = Botkit.facebookbot({
     access_token: accessToken,
     verify_token: verifyToken
 })
