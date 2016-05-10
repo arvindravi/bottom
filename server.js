@@ -24,8 +24,7 @@ controller.setupWebserver(port, function (err, webserver) {
 
 controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, message) {
     bot.reply(message, 'Hello!')
-
-    var menu = {
+    bot.reply(message, {
         attachment: {
             type: 'template',
             payload: {
@@ -55,9 +54,7 @@ controller.hears(['hi', 'hello', 'yo'], 'message_received', function (bot, messa
                 ]
             }
         }
-    }
-
-    bot.reply(message, menu)
+    })
 })
 
 controller.on('facebook_postback', function (bot, message) {
